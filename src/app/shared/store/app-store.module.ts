@@ -4,6 +4,7 @@ import {StoreModule} from "@ngrx/store";
 import {EffectsModule} from "@ngrx/effects";
 import {observationFormReducer} from "./reducer/observation-form.reducer";
 import {ObservationFormEffect} from "./effects/observation-form.effect";
+import {animalReducer} from "./reducer/animal.reducer";
 
 
 
@@ -12,7 +13,8 @@ import {ObservationFormEffect} from "./effects/observation-form.effect";
   imports: [
     CommonModule,
     StoreModule.forRoot({
-      observationForm : observationFormReducer
+      observationForm : observationFormReducer,
+      animal: animalReducer
     }),
     EffectsModule.forRoot([
       ObservationFormEffect
