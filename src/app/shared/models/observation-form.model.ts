@@ -4,6 +4,7 @@ import {AnimalType} from "./animal-type.model";
 
 export class ObservationFormModel {
   id?: number;
+
   islandTitle: string;
   islandDistance: number;
   islandId: number;
@@ -13,6 +14,7 @@ export class ObservationFormModel {
 
   observationDate: string;
   observationQuality: ObservationQuality;
+
   animalFamily: AnimalFamily;
   animalType: AnimalType;
 }

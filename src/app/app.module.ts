@@ -14,6 +14,7 @@ import { ComponentsModule } from './shared/components/components.module';
  */
 import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
+import {AppStoreModule} from "./shared/store/app-store.module";
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {HttpClientModule} from "@angular/common/http";
     BrowserAnimationsModule,
     AppRoutingModule,
     ComponentsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppStoreModule
   ],
   bootstrap: [AppComponent],
   providers: [],

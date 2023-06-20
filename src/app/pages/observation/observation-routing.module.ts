@@ -6,6 +6,7 @@ import {NotFoundComponent} from "../not-found/not-found.component";
 import {ObservationComponent} from "./observation.component";
 import {ObservationListComponent} from "./observation-list/observation-list.component";
 import {ObservationItemComponent} from "./observation-item/observation-item.component";
+import {ObservationNewComponent} from "./observation-new/observation-new.component";
 
 const routes: Routes = [
 
@@ -13,6 +14,10 @@ const routes: Routes = [
   path: '',
   component: ObservationComponent,
   children:[
+    {
+      path:'new',
+      component: ObservationNewComponent
+    },
 
     {
     path:'list',

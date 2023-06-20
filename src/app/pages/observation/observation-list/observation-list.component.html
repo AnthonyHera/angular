@@ -1,2 +1,2 @@
 <p>observation-list works!</p>
-<app-table [data]="tableau"></app-table>
+<app-table *ngIf ='table.length > 0' [data]="table" [headers]="header"></app-table>
