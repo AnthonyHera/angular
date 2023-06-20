@@ -1,0 +1,15 @@
+# Build folder
+dist/
+
+# NPM dependencies folder
+node_modules/
+
+# Angular configuration folder
+.angular/
+
+# IDE configuration folder
+.idea/
+.vscode/
+
+# README.md - HELP.md files
+README.md

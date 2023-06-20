@@ -1,0 +1,21 @@
+
+<table>
+  <thead>
+  <tr>
+    <th colspan="1">Ilot</th>
+    <th colspan="1">IlotId</th>
+    <th colspan="1">IlotDistance
+    <th colspan="1">Date</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of data" >
+    <td>{{data.islandTitle}}</td>
+    <td>{{data.id}}</td>
+    <td>{{data.islandDistance}}</td>
+    <td>{{data.observationDate | date}}</td>
+  </tr>
+  </tbody>
+</table>
+

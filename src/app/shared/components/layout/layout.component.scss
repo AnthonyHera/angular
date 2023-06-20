@@ -1,0 +1,14 @@
+:host {
+
+  div.app-content {
+    z-index: 10;
+    display: flex;
+    width: calc(100vw - 360px);
+    height: calc(100vh - 140px);
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin-top: 80px;
+    margin-left: 360px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}

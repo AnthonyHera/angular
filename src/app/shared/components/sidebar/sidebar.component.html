@@ -1,0 +1,39 @@
+<div class="sidebar-container">
+  <ul class="sidebar-menu nav">
+    <li *ngFor="let item of menuItems" class="nav-item">
+      <span *ngIf="item.group" class="nav-group">
+        {{item.title}}
+      </span>
+
+      <div (click)="toggle(item)" *ngIf="!item.group && item?.children"
+           [attr.aria-expanded]="!item.collapsed" class="d-flex justify-content-between align-items-center pointer">
+        <a [ngClass]="item?.link ? 'nav-parent' : 'nav-link'"
+           [routerLinkActive]="['active']" [routerLink]="item.link">
+         <span class="d-flex align-items-center justify-content-center">
+            <i [ngClass]="item?.icon" class="pe-2"></i>
+           {{item.title}}
+           </span>
+        </a>
+        <i *ngIf="item?.children" [ngClass]="item?.collapsed ? 'bi bi-chevron-down' : 'bi bi-chevron-up'"></i>
+      </div>
+
+      <ul *ngIf="item?.children" [(ngbCollapse)]="item.collapsed" class="nav">
+        <li *ngFor="let children of item.children" class="nav-item">
+          <a [routerLinkActive]="['active']" [routerLink]="children.link" class="nav-link">
+            <i [ngClass]="children?.icon" class="pe-2"></i>
+            {{children.title}}
+          </a>
+        </li>
+      </ul>
+
+      <div *ngIf="!item.group && !item?.children" class="d-flex justify-content-between align-items-center">
+        <a [routerLinkActive]="['active']" [routerLink]="item.link" class="nav-parent">
+         <span class="d-flex align-items-center justify-content-center">
+            <i [ngClass]="item?.icon" class="pe-2"></i>
+           {{item.title}}
+         </span>
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
