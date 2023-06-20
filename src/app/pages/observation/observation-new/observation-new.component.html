@@ -1,0 +1,40 @@
+<form [formGroup] = "formGroup">
+  <select formControlName="animalType">
+    <option *ngFor="let name of specimen" [ngValue]="specimen">{{name.type}}</option>
+  </select>
+  <select formControlName="animalFamily">
+    <option *ngFor="let name of family" [ngValue]="family">{{name.family}}</option>
+  </select>
+  <div>
+    <input #islandDistance="" [formControlName]="'islandDistance'" autocomplete="off"
+        class="form-control"
+        id="islandDistance"
+        placeholder="IslandDIstance"
+        type="number">
+  </div>
+  <div>
+    <input #islandId="" [formControlName]="'islandId'" autocomplete="off"
+           class="form-control"
+           id="islandId"
+           placeholder="islandId"
+           type="number">
+  </div>
+  <input #estimatedSubjectsSize="" [formControlName]="'estimatedSubjectsSize'" autocomplete="off"
+         class="form-control"
+         id="estimatedSubjectsSize"
+         placeholder="estimatedSubjectsSize"
+         type="number">
+  <input #estimatedSubjectsNumber="" [formControlName]="'estimatedSubjectsNumber'" autocomplete="off"
+         class="form-control"
+         id="estimatedSubjectsNumber"
+         placeholder="estimatedSubjectsNumber"
+         type="number">
+
+    <select formControlName="islandTitle">
+      <option *ngFor="let name of island" [ngValue]="island">{{name.titre}}</option>
+    </select>
+  <select formControlName="observationQuality">
+    <option *ngFor="let name of observationQuality" [ngValue]="observationQuality">{{name.quality}}</option>
+  </select>
+</form>
+
