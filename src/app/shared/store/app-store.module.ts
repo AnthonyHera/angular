@@ -5,6 +5,7 @@ import {EffectsModule} from "@ngrx/effects";
 import {observationFormReducer} from "./reducer/observation-form.reducer";
 import {ObservationFormEffect} from "./effects/observation-form.effect";
 import {animalReducer} from "./reducer/animal.reducer";
+import {AnimalEffect} from "./effects/animal.effect";
 
 
 
@@ -17,7 +18,8 @@ import {animalReducer} from "./reducer/animal.reducer";
       animal: animalReducer
     }),
     EffectsModule.forRoot([
-      ObservationFormEffect
+      ObservationFormEffect,
+      AnimalEffect
     ]
     )
   ]

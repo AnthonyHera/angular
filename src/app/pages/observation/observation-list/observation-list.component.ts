@@ -31,7 +31,8 @@ export class ObservationListComponent implements OnInit, OnDestroy {
     this.store.select('observationForm').pipe(takeUntil(this.destroy$))
       .subscribe(value =>this.data = [...value.data])
     this.store.dispatch(new SimpleAction('[Observation Form] Get All'))
- /*
+
+    /*
     this.sub = this.api.searchAllFormulaire()
       .subscribe(data => this.data = data)
   */

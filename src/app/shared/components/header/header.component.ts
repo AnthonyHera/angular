@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,7 @@ export class HeaderComponent {
    *
    * @param router Angular Router enables navigation from one view to the next as users perform application tasks
    */
-  constructor(private router: Router) {
+  constructor(private router: Router,private translate: TranslateService) {
   }
 
   /**
@@ -26,5 +27,16 @@ export class HeaderComponent {
    */
   public navigate(path: string): Promise<boolean> {
     return this.router.navigate([path]);
+  }
+  public changeLanguage(){
+    this.translate.store.currentLang = 'fr_FR'
+
+    if(this.translate.store.currentLang == 'fr_FR')
+      this.translate.use('en_BR')
+
+   if(this.translate.store.currentLang =='en_BR')
+      this.translate.use('fr_FR')
+
+    console.warn(this.translate.store.currentLang)
   }
 }

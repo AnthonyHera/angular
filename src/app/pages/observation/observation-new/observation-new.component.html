@@ -1,40 +1,61 @@
-<form [formGroup] = "formGroup">
-  <select formControlName="animalType">
-    <option *ngFor="let name of specimen" [ngValue]="specimen">{{name.type}}</option>
+<form [formGroup]="formGroup">
+  <select formControlName="animalTypeId">
+    <option *ngFor="let name of specimen" [ngValue]="name.id">{{name.type}}</option>
   </select>
-  <select formControlName="animalFamily">
-    <option *ngFor="let name of family" [ngValue]="family">{{name.family}}</option>
+  <select formControlName="animalFamilyId">
+    <option *ngFor="let name of family" [ngValue]="name.id">{{name.family}}</option>
   </select>
   <div>
     <input #islandDistance="" [formControlName]="'islandDistance'" autocomplete="off"
-        class="form-control"
-        id="islandDistance"
-        placeholder="IslandDIstance"
-        type="number">
-  </div>
-  <div>
-    <input #islandId="" [formControlName]="'islandId'" autocomplete="off"
            class="form-control"
-           id="islandId"
-           placeholder="islandId"
+           id="islandDistance"
+           placeholder="IslandDIstance"
            type="number">
   </div>
-  <input #estimatedSubjectsSize="" [formControlName]="'estimatedSubjectsSize'" autocomplete="off"
+
+  <div class="form-group">
+  <!--
+    <div *ngIf="isFocused(islandId) && formGroup.controls['islandId'].invalid && (formGroup.controls['islandId'].dirty || formGroup.controls['islandId'].touched)">
+      <div *ngIf="formGroup.controls['islandId'].hasError('required')" [ngStyle]="{marginTop:'0.5rem'}">
+        required
+      </div>
+      <div *ngIf="formGroup.controls['islandId'].hasError('minlength')" [ngStyle]="{marginTop:'0.5rem'}">
+        minlenght
+      </div>
+    </div>
+    -->
+  </div>
+  <input #estimatedSubjectSize="" [formControlName]="'estimatedSubjectSize'" autocomplete="off"
          class="form-control"
-         id="estimatedSubjectsSize"
-         placeholder="estimatedSubjectsSize"
+         id="estimatedSubjectSize"
+         placeholder="estimatedSubjectSize"
          type="number">
   <input #estimatedSubjectsNumber="" [formControlName]="'estimatedSubjectsNumber'" autocomplete="off"
          class="form-control"
          id="estimatedSubjectsNumber"
          placeholder="estimatedSubjectsNumber"
          type="number">
+  <input #breathHoldTime="" [formControlName]="'breathHoldTime'" autocomplete="off"
+         class="form-control"
+         id="breathHoldTime"
+         placeholder="breathHoldTime"
+         type="text">
 
-    <select formControlName="islandTitle">
-      <option *ngFor="let name of island" [ngValue]="island">{{name.titre}}</option>
-    </select>
-  <select formControlName="observationQuality">
-    <option *ngFor="let name of observationQuality" [ngValue]="observationQuality">{{name.quality}}</option>
+  <select formControlName="islandId">
+    <option *ngFor="let ile of island"  [ngValue]="ile.id">{{ile.titre}}</option>
   </select>
+  <select formControlName="observationQualityId" id='observationQualityId'>
+    <option *ngFor="let observation of observationQuality" [ngValue]="observation.id">{{observation.quality}}</option>
+  </select>
+
+  <input #observationDate="" [formControlName]="'observationDate'" autocomplete="off"
+         class="form-control"
+         id="observationDate"
+         placeholder="observationDate"
+         type="text"
+         value="01/01/1996"
+  >
+
+  <button (click)="submit()">Subm</button>
 </form>
 

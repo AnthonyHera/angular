@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg">
+  <button (click)="changeLanguage()" >coucou</button>
   <div class="navbar-left">
     <a (click)="navigate('/')" class="navbar-brand text-white font-weight-light">
-      <span>Province Sud - Observation form</span>
+      <span>{{'COMPONENTS.HEADER.TITLE' | translate}}</span>
     </a>
   </div>
 

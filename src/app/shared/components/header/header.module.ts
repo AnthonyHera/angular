@@ -8,12 +8,14 @@ import { RouterModule } from '@angular/router';
  * Import of application's components
  */
 import { HeaderComponent } from './header.component';
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule
-  ],
+    imports: [
+        CommonModule,
+        RouterModule,
+        TranslateModule
+    ],
   exports: [
     HeaderComponent
   ],

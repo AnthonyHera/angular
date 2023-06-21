@@ -13,8 +13,10 @@ import { ComponentsModule } from './shared/components/components.module';
  * Import of application's components
  */
 import { AppComponent } from './app.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {AppStoreModule} from "./shared/store/app-store.module";
+import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import {createTranslateLoader} from "./shared/services/translate";
 
 
 @NgModule({
@@ -27,7 +29,15 @@ import {AppStoreModule} from "./shared/store/app-store.module";
     AppRoutingModule,
     ComponentsModule,
     HttpClientModule,
-    AppStoreModule
+    AppStoreModule,
+    TranslateModule.forRoot({
+      defaultLanguage : 'fr_FR',
+      loader :{
+        provide:TranslateLoader,
+        useFactory:(createTranslateLoader),
+        deps: [HttpClient]
+      }
+    })
   ],
   bootstrap: [AppComponent],
   providers: [],
